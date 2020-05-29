@@ -1,12 +1,16 @@
 import random
 
 if int(round(random.random())):
-    pri_status="Online"
+    pri_status="Running"
 else:
-    pri_status="Offline"
+    pri_status="Stopped"
 if int(round(random.random())):
-    status="Up"
+    status="Active"
 else:
-    status="Down"
-print("Primary Status:\t\t"+pri_status)
-print("ACFS Status:\t\t"+status)
+    status="Stopped"
+
+print("Site:\t\t\t\tPrimary")
+print("Primary hostname:\t\toracle.greencore.co.cr")
+print("Primary path:\t\t\t/Historico")
+print("Primary status:\t\t\t"+pri_status)
+print("Background Resources:\t\t"+status)
