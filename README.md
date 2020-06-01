@@ -8,7 +8,7 @@ Modern versions of Oracle use ACFS (cluster filesystem) as a replication subsyst
 ## Install
 
 ### From NRPE host
-- Remove the ``face_acfsutil.py`` script from line 4 of the ``check_oracledb_replication.py`` script, and replace with similar to ``/usr/sbin/acfsutil repl info -c /ACFS_DIR/".
+- Remove the ``face_acfsutil.py`` script from line 13 of the ``check_oracledb_replication.py`` script, and replace with similar to ``/usr/sbin/acfsutil repl info -c /ACFS_DIR/".
 - Copy the ``check_oracledb_replication.py`` script to ``/usr/local/nagios/libexec/`` on the NRPE host, with execution permissions, and root:nagios owner. Before moving on, check that you can run as nagios user the script and that it prints a correct anwer.
 - Add a new file to ``/usr/local/nagios/etc/nrpe/`` with a content like:
 ```

@@ -1,16 +1,25 @@
+#!/usr/bin/python3
+"""
+Script used in testing of the Nagios command
+It fakes the information acfsutil would print, with random to check the
+different possible states.
+Copyright 2020, Greencore Solutions
+Licensed GPLv3
+"""
+
 import random
 
 if int(round(random.random())):
-    pri_status="Running"
+    PRI_STATUS = "Running"
 else:
-    pri_status="Stopped"
+    PRI_STATUS = "Stopped"
 if int(round(random.random())):
-    status="Active"
+    STATUS = "Active"
 else:
-    status="Stopped"
+    STATUS = "Stopped"
 
 print("Site:\t\t\t\tPrimary")
 print("Primary hostname:\t\toracle.greencore.co.cr")
 print("Primary path:\t\t\t/Historico")
-print("Primary status:\t\t\t"+pri_status)
-print("Background Resources:\t\t"+status)
+print("Primary status:\t\t\t"+PRI_STATUS)
+print("Background Resources:\t\t"+STATUS)
