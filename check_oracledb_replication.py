@@ -1,7 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import os, sys
-primary=os.popen("python3 fake_acfsutil.py|grep Primary\ status").readline().strip()
-background=os.popen("python3 fake_acfsutil.py|grep Background\ Resources").readline().strip()
+
+acfs_command="python3 fake_acfsutil.py"
+
+primary=os.popen(acfs_command+"|grep Primary\ status").readline().strip()
+background=os.popen(acfs_command+"|grep Background\ Resources").readline().strip()
 
 if "Running" in primary and "Active" in background:
         print("OK - Cluster in sync.")
