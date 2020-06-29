@@ -18,12 +18,9 @@ background = os.popen(ACFS_COMMAND+"|grep Background\ Resources").readline().str
 if "Running" in primary and "Active" in background:
     print("OK - Cluster in sync.")
     sys.exit(0)
-elif "Running" not in primary:
+elif "Running" not in primary or "Active" not in background:
     print("CRITICAL - Check primary.")
     sys.exit(2)
-elif "Active" not in background:
-    print("WARNING - Check background resources.")
-    sys.exit(1)
 else:
     print("UKNOWN - Manually check resources.")
     sys.exit(3)
